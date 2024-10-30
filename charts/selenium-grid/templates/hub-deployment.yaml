@@ -171,6 +171,9 @@ spec:
         {{- with .Values.hub.securityContext }}
           securityContext: {{- toYaml . | nindent 12 }}
         {{- end }}
+    {{- with .Values.hub.initContainers }}
+      initContainers: {{- toYaml . | nindent 8 }}
+    {{- end }}
     {{- with .Values.hub.nodeSelector }}
       nodeSelector: {{- toYaml . | nindent 8 }}
     {{- end }}

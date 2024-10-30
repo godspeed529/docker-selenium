@@ -43,4 +43,7 @@ spec:
       {{- if and (eq .Values.hub.serviceType "NodePort") .Values.hub.subscribeNodePort }}
       nodePort: {{ .Values.hub.subscribeNodePort }}
       {{- end }}
+    {{- with .Values.hub.extraPorts }}
+        {{- toYaml . | nindent 4 }}
+    {{- end }}
 {{- end }}

@@ -766,6 +766,12 @@ hub:
   nodeSelector: {}
   # -- Priority class name for selenium-hub pods
   priorityClassName: ""
+  # -- It is used to add initContainers in the same pod of the hub.
+  # It should be set using the --set-json option
+  initContainers: []
+  # -- Custom service ports for selenium-hub
+  extraPorts: []
+
 
 tracing:
   # -- Enable tracing. Implies installing Jaeger

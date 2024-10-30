@@ -1,6 +1,7 @@
 #!/bin/bash
 set -x
 
+VERSION=0.36.5
 SET_VERSION=${SET_VERSION:-"true"}
 CHART_PATH=${CHART_PATH:-"charts/selenium-grid"}
 # Function to be executed on command failure
@@ -16,7 +17,7 @@ trap 'on_failure' ERR
 cd tests || true
 
 if [ "${CI:-false}" = "false" ]; then
-  pip3 install virtualenv | grep -v 'Requirement already satisfied'
+  brew install virtualenv | grep -v 'Requirement already satisfied' || true
   virtualenv docker-selenium-tests
   source docker-selenium-tests/bin/activate
 else

@@ -297,6 +297,8 @@ A Helm chart for creating a Selenium Grid Server in Kubernetes
 | hub.tolerations | list | `[]` | Tolerations for selenium-hub pods |
 | hub.nodeSelector | object | `{}` | Node selector for selenium-hub pods |
 | hub.priorityClassName | string | `""` | Priority class name for selenium-hub pods |
+| hub.initContainers | list | `[]` | It is used to add initContainers in the same pod of the hub. It should be set using the --set-json option |
+| hub.extraPorts | list | `[]` | Custom service ports for selenium-hub |
 | tracing.enabled | bool | `false` | Enable tracing. Implies installing Jaeger |
 | tracing.enabledWithExistingEndpoint | bool | `false` | Enable tracing without automatically installing Jaeger |
 | tracing.exporter | string | `"otlp"` | Exporter type for tracing. Recommended `otlp` for wide compatibility with observability backends (e.g. Jaeger, Elastic, etc.) |
